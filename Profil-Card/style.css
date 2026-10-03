@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #000;
+    display: flex;
+    justify-content: center;
+    transform: translate(0%,30%);
+}
+
+.card{
+    position: relative;
+    height: 400px;
+    width: 280px;
+    border-radius: 40px;
+
+    background-image: url(./Omnifab-profil.webp);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card > .head-card{
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    border: 1px solid #fff;
+
+}
+
+.loading{
+    
+}
+h1{
+    font-family: 'Poppins', sans-serif;     
+}
