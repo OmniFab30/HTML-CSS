@@ -3,35 +3,109 @@
     padding: 0;
     outline: 0;
     box-sizing: border-box;
+    font-family: 'Poppins';
+    color: #fff;
+}
+
+:root{
+    --primary: #5f007c;
+    --muted: #5a5c5a;
 }
 
 body{
+    min-height: 100vh;
+    margin: 0 10%;
     background: #000;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    transform: translate(0%,30%);
+    align-items: center;
+}
+
+.carousel{
+    width: 300px;
+    overflow-x: auto;
+    margin: 3em auto;
+    display: flex;
+    gap: 1em;
+    scroll-behavior: smooth;
+
+    anchor-name:--carousel;
+    scroll-snap-type: x mandatory;
+    scroll-marker-group: after;
+}
+
+.carousel::-webkit-scrollbar{
+    display: none;
+}
+
+.carousel::scroll-button(right), 
+.carousel::scroll-button(left){
+    content:'>';
+    border: none;
+    background-color: var(--primary);
+    font-size: 2rem;
+    color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    padding-right: .2rem;
+    cursor: pointer;
+    position: fixed;
+
+    position-anchor: --carousel;
+    position-area: right center;
+    translate: 20%;
+}
+
+.carousel::scroll-button(left){
+    content:'<';
+    padding-left: .2rem;
+    position-area: left center;
+    translate: -20%;
+}
+
+.carousel::scroll-button(right):disabled, 
+.carousel::scroll-button(left):disabled{
+    opacity: 0.5;
+    cursor: auto;
+}
+
+.carousel::scroll-marker-group{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: .5em;
 }
 
 .card{
-    position: relative;
-    height: 400px;
-    width: 280px;
-    border-radius: 40px;
-
-    background-image: url(./Omnifab-profil.webp);
-    background-size:cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    scroll-snap-align: start;
+    flex: 0 0 100%;
+    height: 30em;
+    background-color: var(--muted);
+    padding: 1em;
+    border-radius: 2em;
+    text-align: center;
+    align-content: center;
 }
 
-.card > .head-card{
-    position: absolute;
-    height: 20%;
-    width: 100%;
-    border: 1px solid #fff;
-
+.card::scroll-marker{
+    content: '';
+    height: 1em;
+    width: 1em;
+    background-color: var(--muted);
+    border-radius: 50%;
 }
 
-h1{
-    font-family: 'Poppins', sans-serif;     
+.card::scroll-marker:target-current{
+    background-color: var(--primary);
+}
+
+@media(max-width: 500px){
+    .carousel::scroll-button(right){
+        translate: -50%;
+    }
+    .carousel::scroll-button(left){
+        translate: 50%;
+    }
 }
