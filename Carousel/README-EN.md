@@ -31,3 +31,8 @@ A media query adjusts the position of the navigation buttons on screens smaller 
 * Media Queries
 
 > **No JavaScript is used.** The entire carousel navigation is handled using modern native CSS features.
+
+
+
+![06-10-2026 Scroll-button (CSS) compatibilities](./scroll-button-compatibilities.png)
+![06-10-2026 Scroll-marker-group (CSS) compatibilities](./scroll-marker-group.png)
