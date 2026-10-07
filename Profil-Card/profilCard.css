@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    background-color:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.card{
+    position: relative;
+    height:400px;
+    width:240px;
+    box-shadow:0 0 0 2px #1E1E1E;
+    border-radius:32px;
+
+    background-image: url("./Omnifab-profil.webp");
+    background-size:cover;
+    background-position:50% 50%;
+    
+}
+
+.star-blur{
+    position: absolute;
+    height:36px;
+    width:36px;
+    display:grid;
+    align-items:center;
+    border-radius:50%;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+
+    right:0;
+    margin:10px;
+}
+
+.star-blur img{
+    height:100%;
+    width:70%;
+    margin:auto;
+}
+
