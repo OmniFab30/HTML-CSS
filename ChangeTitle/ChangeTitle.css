@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #121212;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    color: #e9e6e3;
+    font-family: 'Outfit';
+}
+
+.scene{
+    position:relative;
+    width: clamp(250px, 80%, 1000px);
+    height: 40%;
+    inset: 0;
+    text-align: center;
+    align-content:center;   
+}
+
+h1{
+    font-size: clamp(2.5rem, 10vw, 5rem);
+    font-weight: 900;
+}
+
+button{
+    border: none;
+    width: 240px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 1rem;
+    background: linear-gradient(-45deg, #121212 0%, #225a5a 59%, #121212 100%);
+    color: #dadada;
+    transition: .3s ease-in-out;
+}
+
+button:hover{
+    transform: translate(1.5px, 1.5px);
+}
